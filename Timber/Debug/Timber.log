@@ -1,0 +1,23 @@
+﻿  Timber.cpp
+C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Timber.cpp(181,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Timber.cpp(183,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Timber.cpp(190,15): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Timber.cpp(205,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Timber.cpp(208,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Timber.cpp(215,15): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Timber.cpp(230,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Timber.cpp(233,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Timber.cpp(240,15): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Timber.vcxproj -> C:\Users\Kam Parsen\Documents\GitHub\Timber\Debug\Timber.exe
