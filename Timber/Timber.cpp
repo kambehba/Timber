@@ -4,11 +4,12 @@
 
 using namespace sf;
 void ProcessGame();
+
 void MoveBee();
 void MoveCloud1();
 void MoveCloud2();
 bool isBeeActive = false;
-bool isCloud1Active = false;
+bool isCloud1Active = false;          vv 
 bool isCloud2Active = false;
 bool isCloud3Active = false;
 bool isGamePaused = true;
@@ -31,13 +32,31 @@ int score = 0;
 sf::Text messageText;
 sf::Text scoreText;
 sf:: Font font;
-
+sf::Clock clock;
 
 Time dt;
 
 int main()
 {
    
+    
+    /*Time Bar - Strat*/
+    RectangleShape timeBar;
+    float timeBarStartWidth = 400;
+    float timeBarHeight = 80;
+    timeBar.setSize(Vector2f(timeBarStartWidth, timeBarHeight));
+    timeBar.setFillColor(Color::Red);
+    timeBar.setPosition((1920 / 2) - timeBarStartWidth / 2, 980);
+    
+    Time gameTimeTotal;
+    float timeRemaining = 6.0f;
+    float timeBarWidthPerSecond = timeBarStartWidth / timeRemaining;
+
+
+
+
+    /*Time Bar - End*/
+
     font.loadFromFile("fonts/KOMIKAP_.ttf");
     messageText.setFont(font);
     scoreText.setFont(font);
@@ -53,41 +72,41 @@ int main()
 
     FloatRect textRect = messageText.getGlobalBounds();
     messageText.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
+
     messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
     scoreText.setPosition(20, 20);
 
 
-   // View view(sf::FloatRect(0, 0, 1280, 720));
-
+    
     Texture textureBackground;
 
     textureBackground.loadFromFile("graphics/background.png");
-  
+
     spriteBackground.setTexture(textureBackground);
     spriteBackground.setPosition(0, 0);
 
     //Make the tree
-  
+
     textureTree.loadFromFile("graphics/tree.png");
-  
+
     spriteTree.setTexture(textureTree);
     spriteTree.setPosition(810, 0);
 
 
     //Prepare the bee
-   
+
     textureBee.loadFromFile("graphics/bee.png");
-   
+
     spriteBee.setTexture(textureBee);
-    spriteBee.setPosition(0,800);
+    spriteBee.setPosition(0, 800);
 
     bool beeActive = false;
     float beeSpeed = 0.0f;
 
     //Make 3 cloud sprites from 1 texture
-   
+
     textureCloud.loadFromFile("graphics/cloud.png");
-  
+
     spriteCloud1.setTexture(textureCloud);
     spriteCloud2.setTexture(textureCloud);
     spriteCloud3.setTexture(textureCloud);
@@ -103,21 +122,22 @@ int main()
     float cloud1Speed = 0.0f;
     float cloud2Speed = 0.0f;
     float cloud3Speed = 0.0f;
-
+   
     
-
+    
     srand((int)time(0));
     int number = (rand() % 100);
 
-    
-
     while (window.isOpen())
     {
+      
         ProcessGame();
     }
 
     return 0;
 }
+
+
 
 void ProcessGame()
 {
@@ -143,28 +163,35 @@ void ProcessGame()
     window.draw(spriteTree);
     window.draw(spriteBee);
     window.draw(scoreText);
-
-    
+    window.draw(messageText);
 
     window.display();
 
    
     if (!isGamePaused)
     {
-        Clock clock;
+      
         //Measure time
         dt = clock.restart();
 
-       
+        messageText.setString(" ");
+
+        
         MoveBee();
         MoveCloud1();
         MoveCloud2();
 
-        scoreText.setString("sdfadsf");
+        std::stringstream ss;
+
+        ss << "Score = " << score;
+        //scoreText.setString(ss.str());
+
     }
 
-    //window.draw(scoreText);
-    //window.draw(messageText);
+   // window.draw(scoreText);
+
+
+  //  window.draw(messageText);
   
 
     //window.draw(spriteBee);

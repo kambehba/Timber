@@ -1,4 +1,6 @@
 -This Documents Tracks the progress and issues for this project-
 
--Add Score to the top Left
--Add Message to the Center
+-Add Score to the top Left - Done
+-Add Message to the Center - Done
+
+-Add Time bar
