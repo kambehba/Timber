@@ -1,6 +1,4 @@
-#include <iostream>
-#include <SFML/Graphics.hpp>
-#include <sstream>
+#include "Game.h"
 
 using namespace sf;
 void ProcessGame();
@@ -9,7 +7,7 @@ void MoveBee();
 void MoveCloud1();
 void MoveCloud2();
 bool isBeeActive = false;
-bool isCloud1Active = false;          vv 
+bool isCloud1Active = false;          
 bool isCloud2Active = false;
 bool isCloud3Active = false;
 bool isGamePaused = true;
@@ -26,19 +24,21 @@ Texture textureCloud;
 Sprite spriteCloud1;
 Sprite spriteCloud2;
 Sprite spriteCloud3;
-VideoMode vm(1920, 1080);
-RenderWindow  window(vm, "Timber!!!", Style::Fullscreen);
+
 int score = 0;
 sf::Text messageText;
 sf::Text scoreText;
 sf:: Font font;
-sf::Clock clock;
+
 
 Time dt;
 
 int main()
 {
-   
+    Game game;
+    game.startGame();
+
+    return 0;
     
     /*Time Bar - Strat*/
     RectangleShape timeBar;
@@ -128,11 +128,11 @@ int main()
     srand((int)time(0));
     int number = (rand() % 100);
 
-    while (window.isOpen())
-    {
-      
-        ProcessGame();
-    }
+    //while (window.isOpen())
+    //{
+    //  
+    //    ProcessGame();
+    //}
 
     return 0;
 }
@@ -149,30 +149,30 @@ void ProcessGame()
 
     if (Keyboard::isKeyPressed(Keyboard::Escape))
     {
-        window.close();
+       // window.close();
         //return 0;
     }
 
-    window.clear();
+   // window.clear();
 
-    window.draw(spriteBackground);
-    window.draw(spriteCloud1);
-    window.draw(spriteCloud2);
-    window.draw(spriteCloud3);
+   // window.draw(spriteBackground);
+   // window.draw(spriteCloud1);
+  //  window.draw(spriteCloud2);
+  //  window.draw(spriteCloud3);
 
-    window.draw(spriteTree);
-    window.draw(spriteBee);
-    window.draw(scoreText);
-    window.draw(messageText);
+  //  window.draw(spriteTree);
+  //  window.draw(spriteBee);
+  //  window.draw(scoreText);
+  //  window.draw(messageText);
 
-    window.display();
+  //  window.display();
 
    
     if (!isGamePaused)
     {
       
         //Measure time
-        dt = clock.restart();
+      //  dt = clock.restart();
 
         messageText.setString(" ");
 

@@ -13,13 +13,62 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{8e4e83fb-d8b6-494a-95b6-898b060f176e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Timber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\log.txt.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="graphics\axe.png">
+      <Filter>Graphics</Filter>
+    </Image>
+    <Image Include="graphics\background.png">
+      <Filter>Graphics</Filter>
+    </Image>
+    <Image Include="graphics\background-1280-720.png">
+      <Filter>Graphics</Filter>
+    </Image>
+    <Image Include="graphics\bee.png">
+      <Filter>Graphics</Filter>
+    </Image>
+    <Image Include="graphics\branch.png">
+      <Filter>Graphics</Filter>
+    </Image>
+    <Image Include="graphics\cloud.png">
+      <Filter>Graphics</Filter>
+    </Image>
+    <Image Include="graphics\log.png">
+      <Filter>Graphics</Filter>
+    </Image>
+    <Image Include="graphics\player.png">
+      <Filter>Graphics</Filter>
+    </Image>
+    <Image Include="graphics\rip.png">
+      <Filter>Graphics</Filter>
+    </Image>
+    <Image Include="graphics\tree.png">
+      <Filter>Graphics</Filter>
+    </Image>
+    <Image Include="graphics\tree2.png">
+      <Filter>Graphics</Filter>
+    </Image>
   </ItemGroup>
 </Project>
