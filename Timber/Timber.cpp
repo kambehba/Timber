@@ -31,7 +31,7 @@ sf::Text scoreText;
 sf:: Font font;
 
 
-Time dt;
+sf::Time dt;
 
 int main()
 {

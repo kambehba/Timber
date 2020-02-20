@@ -177,7 +177,9 @@
     </Image>
     <Image Include="graphics\bee.png" />
     <Image Include="graphics\branch.png" />
-    <Image Include="graphics\cloud.png" />
+    <Image Include="graphics\cloud.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
     <Image Include="graphics\log.png" />
     <Image Include="graphics\player.png" />
     <Image Include="graphics\rip.png" />
