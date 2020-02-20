@@ -26,9 +26,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\log.txt.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -70,5 +67,19 @@
     <Image Include="graphics\tree2.png">
       <Filter>Graphics</Filter>
     </Image>
+    <Image Include="graphics\bee_f.png">
+      <Filter>Graphics</Filter>
+    </Image>
+    <Image Include="graphics\bee_left.png">
+      <Filter>Graphics</Filter>
+    </Image>
+    <Image Include="graphics\bee_right.png">
+      <Filter>Graphics</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\log.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

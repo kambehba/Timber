@@ -161,9 +161,6 @@
     <ClCompile Include="Timber.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\log.txt.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Game.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
@@ -176,6 +173,9 @@
       <DeploymentContent>true</DeploymentContent>
     </Image>
     <Image Include="graphics\bee.png" />
+    <Image Include="graphics\bee_f.png" />
+    <Image Include="graphics\bee_left.png" />
+    <Image Include="graphics\bee_right.png" />
     <Image Include="graphics\branch.png" />
     <Image Include="graphics\cloud.png">
       <DeploymentContent>true</DeploymentContent>
@@ -185,6 +185,9 @@
     <Image Include="graphics\rip.png" />
     <Image Include="graphics\tree.png" />
     <Image Include="graphics\tree2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\log.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

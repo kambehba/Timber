@@ -2,5 +2,5 @@
 
 -Add Score to the top Left - Done
 -Add Message to the Center - Done
-
--Add Time bar
+-Make the bee go left and right and change orinetation accordingly 
+-Add Time bar - Not Done

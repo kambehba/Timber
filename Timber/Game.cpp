@@ -3,17 +3,26 @@ using namespace sf;
 
 Game::Game() 
 {
+	intializeGame();
+	
+}
+
+void Game::intializeGame()
+{
+	isBeeMovingLeft = true;
 	setWindow();
 	setBackground();
 	createClouds();
 	createTrees();
-	
+	createBee();
+	createScoreText();
 }
 
 void Game::startGame()
 {
 	try
 	{
+		intializeGame();
 		while (true)
 		{
 			dt = clock.restart();
@@ -25,10 +34,16 @@ void Game::startGame()
 			window.draw(spriteCloud2);
 			window.draw(spriteCloud3);
 			window.draw(spriteTree);
+			window.draw(spriteBee);
+			window.draw(scoreText);
 			
 			window.display();
 
 			moveClouds();
+
+			if (isBeeMovingLeft) moveBeeLeft();
+			else moveBeeRight();
+			
 
 			if (Keyboard::isKeyPressed(Keyboard::Escape))
 			{
@@ -62,6 +77,15 @@ void Game::createTrees()
 	spriteTree.setPosition(810, 0);
 }
 
+void Game::createBee()
+{
+	textureBee.loadFromFile("graphics\\bee_right.png");
+	spriteBee.setTexture(textureBee);
+	spriteBee.scale(0.5f,0.5f);
+	
+	
+}
+
 void Game::createClouds()
 {
 	textureCloud.loadFromFile("graphics\\cloud.png");
@@ -90,6 +114,43 @@ void Game::moveClouds()
 		spriteCloud1.setPosition(0, 340);
 	}
 
+}
+
+void Game::moveBeeLeft()
+{
+	spriteBee.setPosition(spriteBee.getPosition().x - 0.5, 400);
+	if (spriteBee.getPosition().x < 0)
+	{
+		textureBee.loadFromFile("graphics\\bee_right.png");
+		isBeeMovingLeft = false;
+		//spriteBee.setPosition(1920, 400);
+	}
+}
+
+void Game::moveBeeRight()
+{
+	spriteBee.setPosition(spriteBee.getPosition().x + 0.5, 400);
+	if (spriteBee.getPosition().x > 1920)
+	{
+		textureBee.loadFromFile("graphics\\bee_left.png");
+		isBeeMovingLeft = true;
+
+		//spriteBee.setPosition(1920, 400);
+	}
+}
+
+void Game::createScoreText()
+{
+	font.loadFromFile("fonts/KOMIKAP_.ttf");
+	scoreText.setFont(font);
+
+	scoreText.setString("Score = 0");
+
+	scoreText.setCharacterSize(100);
+
+	scoreText.setFillColor(Color::White);
+
+	scoreText.setPosition(20, 20);
 }
 
 int Game::GetRandomNumber(int start, int end)
