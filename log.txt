@@ -1,6 +1,6 @@
 -This Documents Tracks the progress and issues for this project-
 
--Add Score to the top Left - Done
--Add Message to the Center - Done
--Make the bee go left and right and change orinetation accordingly 
--Add Time bar - Not Done
+-Add Score to the top Left - DONE
+-Add Message to the Center - DONE
+-Make the bee go left and right and change orinetation accordingly - DONE
+-Add Time bar - 

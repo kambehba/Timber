@@ -8,6 +8,7 @@ class Game
 {
 
 private:
+	bool isGamePused;
 	bool isBeeMovingLeft;
 	sf::Clock clock;
 	sf::Time dt;
@@ -30,6 +31,8 @@ private:
 	sf::Text scoreText;
 	sf::Font font;
 
+	sf::RectangleShape timeBar;
+
 
 private:
 	void setWindow();
@@ -40,9 +43,11 @@ public:
 	~Game();
 	void intializeGame();
 	void startGame();
+	void ScanKeyboard();
 	void createClouds();
 	void createTrees();
 	void createBee();
+	void createTimebar();
 	void moveClouds();
 	void moveBeeLeft();
 	void moveBeeRight();

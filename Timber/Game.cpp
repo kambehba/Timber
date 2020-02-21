@@ -10,12 +10,14 @@ Game::Game()
 void Game::intializeGame()
 {
 	isBeeMovingLeft = true;
+	isGamePused = true;
 	setWindow();
 	setBackground();
 	createClouds();
 	createTrees();
 	createBee();
 	createScoreText();
+	createTimebar();
 }
 
 void Game::startGame()
@@ -25,6 +27,8 @@ void Game::startGame()
 		intializeGame();
 		while (true)
 		{
+			ScanKeyboard();
+
 			dt = clock.restart();
 			
 			window.clear();
@@ -36,26 +40,39 @@ void Game::startGame()
 			window.draw(spriteTree);
 			window.draw(spriteBee);
 			window.draw(scoreText);
+			window.draw(timeBar);
 			
 			window.display();
 
-			moveClouds();
-
-			if (isBeeMovingLeft) moveBeeLeft();
-			else moveBeeRight();
-			
-
-			if (Keyboard::isKeyPressed(Keyboard::Escape))
+			if (!isGamePused)
 			{
-				window.close();
-				return;
-			}
+				moveClouds();
+
+				if (isBeeMovingLeft) moveBeeLeft();
+				else moveBeeRight();
+			}	
 		}
 	}
 	catch (std::exception & e)
 	{
 		std::cout << e.what() << '\n';
 	}
+}
+
+void Game::ScanKeyboard()
+{
+	
+	if (Keyboard::isKeyPressed(Keyboard::Escape))
+	{
+		window.close();
+		
+	}
+
+	if (Keyboard::isKeyPressed(Keyboard::Enter))
+	{
+		isGamePused = !isGamePused;
+	}
+	
 }
 
 void Game::setWindow()
@@ -79,11 +96,19 @@ void Game::createTrees()
 
 void Game::createBee()
 {
-	textureBee.loadFromFile("graphics\\bee_right.png");
+	textureBee.loadFromFile("graphics\\bee.png");
 	spriteBee.setTexture(textureBee);
 	spriteBee.scale(0.5f,0.5f);
+	spriteBee.setPosition(1920, 400);
 	
-	
+}
+
+void Game::createTimebar()
+{
+	timeBar.setSize(Vector2f(500, 50));
+	timeBar.setFillColor(Color::Red);
+	timeBar.setPosition(710, 980);
+
 }
 
 void Game::createClouds()
@@ -121,8 +146,10 @@ void Game::moveBeeLeft()
 	spriteBee.setPosition(spriteBee.getPosition().x - 0.5, 400);
 	if (spriteBee.getPosition().x < 0)
 	{
-		textureBee.loadFromFile("graphics\\bee_right.png");
+		spriteBee.setTextureRect(sf::IntRect(spriteBee.getTextureRect().width, 0, -spriteBee.getTextureRect().width, spriteBee.getTextureRect().height));
+
 		isBeeMovingLeft = false;
+		timeBar.setSize(sf::Vector2f(timeBar.getSize().x - 20, timeBar.getSize().y));
 		//spriteBee.setPosition(1920, 400);
 	}
 }
@@ -130,10 +157,12 @@ void Game::moveBeeLeft()
 void Game::moveBeeRight()
 {
 	spriteBee.setPosition(spriteBee.getPosition().x + 0.5, 400);
-	if (spriteBee.getPosition().x > 1920)
+	if (spriteBee.getPosition().x >= 1920)
 	{
-		textureBee.loadFromFile("graphics\\bee_left.png");
 		isBeeMovingLeft = true;
+		spriteBee.setTextureRect(sf::IntRect(0, 0, -spriteBee.getTextureRect().width, spriteBee.getTextureRect().height));
+
+		
 
 		//spriteBee.setPosition(1920, 400);
 	}

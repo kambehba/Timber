@@ -1,30 +1,7 @@
 ﻿  Game.cpp
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(109,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(110,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(111,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(121,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(132,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Timber.cpp
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Timber.cpp(208,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Timber.cpp(210,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Timber.cpp(217,15): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Timber.cpp(232,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Timber.cpp(235,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Timber.cpp(242,15): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Timber.cpp(257,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Timber.cpp(260,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Kam\Documents\GitHub\Timber\Timber\Timber.cpp(267,15): warning C4244: 'initializing': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-  Generating Code...
+C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(137,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(138,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(139,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(149,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(162,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Timber.vcxproj -> C:\Users\Kam\Documents\GitHub\Timber\Debug\Timber.exe
