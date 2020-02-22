@@ -18,6 +18,7 @@ void Game::intializeGame()
 	createBee();
 	createScoreText();
 	createTimebar();
+	createBranches();
 }
 
 void Game::startGame()
@@ -41,6 +42,8 @@ void Game::startGame()
 			window.draw(spriteBee);
 			window.draw(scoreText);
 			window.draw(timeBar);
+			updateBranches();
+			
 			
 			window.display();
 
@@ -57,6 +60,15 @@ void Game::startGame()
 	{
 		std::cout << e.what() << '\n';
 	}
+}
+
+void Game::updateBranches()
+{
+	for (int i = 0; i < NUM_BRANCHES; i++)
+	{
+		window.draw(spriteBranchs[i]);
+	}
+	
 }
 
 void Game::ScanKeyboard()
@@ -180,6 +192,17 @@ void Game::createScoreText()
 	scoreText.setFillColor(Color::White);
 
 	scoreText.setPosition(20, 20);
+}
+
+void Game::createBranches()
+{
+	textureBranch.loadFromFile("graphics\\branch.png");
+	for (int i = 0; i < NUM_BRANCHES; i++)
+	{
+		spriteBranchs[i].setTexture(textureBranch);
+		spriteBranchs[i].setPosition(i*100, 400+(i*50));
+	}
+	
 }
 
 int Game::GetRandomNumber(int start, int end)

@@ -8,6 +8,7 @@ class Game
 {
 
 private:
+	static const int NUM_BRANCHES = 6;
 	bool isGamePused;
 	bool isBeeMovingLeft;
 	sf::Clock clock;
@@ -31,6 +32,9 @@ private:
 	sf::Text scoreText;
 	sf::Font font;
 
+	sf::Sprite spriteBranchs[NUM_BRANCHES];
+	sf::Texture textureBranch;
+
 	sf::RectangleShape timeBar;
 
 
@@ -52,6 +56,8 @@ public:
 	void moveBeeLeft();
 	void moveBeeRight();
 	void createScoreText();
+	void createBranches();
+	void updateBranches();
 	int GetRandomNumber(int start,int end);
 	
 };

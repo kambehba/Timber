@@ -3,4 +3,6 @@
 -Add Score to the top Left - DONE
 -Add Message to the Center - DONE
 -Make the bee go left and right and change orinetation accordingly - DONE
--Add Time bar - 
+-Add Time bar - DONE
+-Add Branches
+
