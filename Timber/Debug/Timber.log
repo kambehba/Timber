@@ -1,8 +1,9 @@
 ﻿  Game.cpp
-C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Game.cpp(182,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Game.cpp(183,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Game.cpp(184,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Game.cpp(204,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Game.cpp(217,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Kam Parsen\Documents\GitHub\Timber\Timber\Game.cpp(252,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Timber.vcxproj -> C:\Users\Kam Parsen\Documents\GitHub\Timber\Debug\Timber.exe
+C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(191,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(192,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(193,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(213,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(226,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(265,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Kam\Documents\GitHub\Timber\Timber\Game.cpp(270,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Timber.vcxproj -> C:\Users\Kam\Documents\GitHub\Timber\Debug\Timber.exe

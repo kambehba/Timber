@@ -3,6 +3,12 @@
 #include <SFML/Graphics.hpp>
 #include <sstream>
 #include <SFML\Window\VideoMode.hpp>
+#include <chrono>
+#include <thread>
+
+enum  Branchside { Left, Right };
+
+struct Branch { sf::Sprite spriteBranch; Branchside side; int x; int y; };
 
 class Game
 {
@@ -32,7 +38,8 @@ private:
 	sf::Text scoreText;
 	sf::Font font;
 
-	sf::Sprite spriteBranchs[NUM_BRANCHES];
+	Branch spriteBranchs[NUM_BRANCHES];
+	sf::Sprite spriteBranch;
 	sf::Texture textureBranch;
 
 	sf::RectangleShape timeBar;
@@ -43,6 +50,7 @@ private:
 private:
 	void setWindow();
 	void setBackground();
+
 
 public:
 	Game();
@@ -61,6 +69,7 @@ public:
 	void createBranches();
 	void updateBranches();
 	void handleEvents();
+	Branchside GetBranchSide();
 	void dothis();
 	int GetRandomNumber(int start,int end);
 	int j;

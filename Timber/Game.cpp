@@ -90,11 +90,22 @@ void Game::handleEvents()
 	}
 }
 
+Branchside Game::GetBranchSide()
+{
+	Branchside side;
+	std::this_thread::sleep_for(std::chrono::milliseconds(200));
+	if (GetRandomNumber(1, 2) == 1)  side = Branchside::Left;
+	else side = Branchside::Right;
+
+	return side;
+	
+}
+
 void Game::updateBranches()
 {
 	for (int i = 0; i < NUM_BRANCHES; i++)
 	{
-		window.draw(spriteBranchs[i]);
+		window.draw(spriteBranchs[i].spriteBranch);
 	}
 	
 }
@@ -121,8 +132,6 @@ void Game::ScanKeyboard()
 	}
 	
 }
-
-
 
 void Game::setWindow()
 {
@@ -244,28 +253,31 @@ void Game::createBranches()
 {
 	textureBranch.loadFromFile("graphics\\branch.png");
 	
-
 	for (int i = 0; i < NUM_BRANCHES; i++)
 	{
-		spriteBranchs[i].setTexture(textureBranch);
-		spriteBranchs[i].setOrigin(sf::Vector2f(220, 40));
-		spriteBranchs[i].setPosition(1100, (i*80));
-
-		//if (GetRandomNumber(1, 3) == 1)
-		//{
-			//spriteBranchs[i].setRotation(180);
-		//}
+		spriteBranchs[i].spriteBranch.setTexture(textureBranch);
+		spriteBranchs[i].spriteBranch.setOrigin(sf::Vector2f(220, 40));
+		
+		spriteBranchs[i].side = GetBranchSide();
+		if (spriteBranchs[i].side == Branchside::Left)
+		{
+			
+			spriteBranchs[i].spriteBranch.setPosition(1300, (i * GetRandomNumber(80, 100)));
+		}
+		else
+		{
+			spriteBranchs[i].spriteBranch.rotate(180);
+			spriteBranchs[i].spriteBranch.setPosition(600, (i * GetRandomNumber(50,100)));
+		}
+			
 	}
-	Game::j = GetRandomNumber(0, 6);
-	spriteBranchs[Game::j].rotate(180);
-	
 }
 
 void Game::dothis()
 {
 	//spriteBranchs[3].rotate(180); spriteBranchs[3].setPosition(spriteBranchs[3].getPosition().x + 5, spriteBranchs[3].getPosition().y); return;
 	Game::j = GetRandomNumber(0,6);
-	spriteBranchs[Game::j].rotate(180);
+	spriteBranchs[Game::j].spriteBranch.rotate(180);
 	return;
 
 	for (int i = 0; i < NUM_BRANCHES; i++)
@@ -275,7 +287,7 @@ void Game::dothis()
 		//spriteBranchs[i].setPosition(1100, (i * 80));
 		//spriteBranchs[3].setRotation(180);
 		Game::j = GetRandomNumber(1, 5);
-		spriteBranchs[Game::j].rotate(180);
+		spriteBranchs[Game::j].spriteBranch.rotate(180);
 		
 	}
 }
