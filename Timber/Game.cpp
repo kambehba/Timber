@@ -25,10 +25,13 @@ void Game::startGame()
 {
 	try
 	{
-		intializeGame();
+		
 		while (true)
 		{
-			ScanKeyboard();
+			window.pollEvent(event);
+			handleEvents();
+
+			//ScanKeyboard();
 
 			dt = clock.restart();
 			
@@ -62,6 +65,31 @@ void Game::startGame()
 	}
 }
 
+void Game::handleEvents()
+{
+	if (event.type == sf::Event::KeyPressed)
+	{
+		if (Keyboard::isKeyPressed(Keyboard::Escape))
+		{
+			window.close();
+
+		}
+
+		if (Keyboard::isKeyPressed(Keyboard::Enter))
+
+		{
+			isGamePused = !isGamePused;
+		}
+
+		if (Keyboard::isKeyPressed(Keyboard::Space))
+		{
+			dothis();
+			
+			scoreText.setString(std::to_string(Game::j));
+		}
+	}
+}
+
 void Game::updateBranches()
 {
 	for (int i = 0; i < NUM_BRANCHES; i++)
@@ -80,12 +108,21 @@ void Game::ScanKeyboard()
 		
 	}
 
-	if (Keyboard::isKeyPressed(Keyboard::Enter))
+	if (Keyboard::isKeyPressed(Keyboard::Enter))  
+		  
 	{
 		isGamePused = !isGamePused;
 	}
+
+  	if (Keyboard::isKeyPressed(Keyboard::Space))
+	{
+  		dothis();
+		scoreText.setString(std::to_string(Game::j));
+	}
 	
 }
+
+
 
 void Game::setWindow()
 {
@@ -142,13 +179,22 @@ void Game::createClouds()
 
 void Game::moveClouds()
 {
-	//spriteCloud1.setPosition(spriteCloud1.getPosition().x+ GetRandomNumber(1,9)*dt.asMilliseconds(), 340);
 	spriteCloud1.setPosition(spriteCloud1.getPosition().x + 0.05, 0);
 	spriteCloud2.setPosition(spriteCloud2.getPosition().x + 0.07, 100);
-	spriteCloud3.setPosition(spriteCloud3.getPosition().x + 0.02, 150);
+	spriteCloud3.setPosition(spriteCloud3.getPosition().x + 0.02, 250);
 	if (spriteCloud1.getPosition().x > 1920)
 	{
-		spriteCloud1.setPosition(0, 340);
+		spriteCloud1.setPosition(-200, 0);
+	}
+
+	if (spriteCloud2.getPosition().x > 1920)
+	{
+		spriteCloud2.setPosition(-200, 100);
+	}
+
+	if (spriteCloud3.getPosition().x > 1920)
+	{
+		spriteCloud3.setPosition(-200, 250);
 	}
 
 }
@@ -197,12 +243,41 @@ void Game::createScoreText()
 void Game::createBranches()
 {
 	textureBranch.loadFromFile("graphics\\branch.png");
+	
+
 	for (int i = 0; i < NUM_BRANCHES; i++)
 	{
 		spriteBranchs[i].setTexture(textureBranch);
-		spriteBranchs[i].setPosition(i*100, 400+(i*50));
+		spriteBranchs[i].setOrigin(sf::Vector2f(220, 40));
+		spriteBranchs[i].setPosition(1100, (i*80));
+
+		//if (GetRandomNumber(1, 3) == 1)
+		//{
+			//spriteBranchs[i].setRotation(180);
+		//}
 	}
+	Game::j = GetRandomNumber(0, 6);
+	spriteBranchs[Game::j].rotate(180);
 	
+}
+
+void Game::dothis()
+{
+	//spriteBranchs[3].rotate(180); spriteBranchs[3].setPosition(spriteBranchs[3].getPosition().x + 5, spriteBranchs[3].getPosition().y); return;
+	Game::j = GetRandomNumber(0,6);
+	spriteBranchs[Game::j].rotate(180);
+	return;
+
+	for (int i = 0; i < NUM_BRANCHES; i++)
+	{
+		//spriteBranchs[i].setTexture(textureBranch);
+		//spriteBranchs[i].setOrigin(sf::Vector2f(220, 40));
+		//spriteBranchs[i].setPosition(1100, (i * 80));
+		//spriteBranchs[3].setRotation(180);
+		Game::j = GetRandomNumber(1, 5);
+		spriteBranchs[Game::j].rotate(180);
+		
+	}
 }
 
 int Game::GetRandomNumber(int start, int end)

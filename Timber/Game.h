@@ -37,6 +37,8 @@ private:
 
 	sf::RectangleShape timeBar;
 
+	sf::Event event;
+
 
 private:
 	void setWindow();
@@ -58,6 +60,9 @@ public:
 	void createScoreText();
 	void createBranches();
 	void updateBranches();
+	void handleEvents();
+	void dothis();
 	int GetRandomNumber(int start,int end);
+	int j;
 	
 };
