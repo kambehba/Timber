@@ -262,12 +262,12 @@ void Game::createBranches()
 		if (spriteBranchs[i].side == Branchside::Left)
 		{
 			
-			spriteBranchs[i].spriteBranch.setPosition(1300, (i * GetRandomNumber(80, 100)));
+			spriteBranchs[i].spriteBranch.setPosition(1300, GetRandomNumber(80, 100));
 		}
 		else
 		{
 			spriteBranchs[i].spriteBranch.rotate(180);
-			spriteBranchs[i].spriteBranch.setPosition(600, (i * GetRandomNumber(50,100)));
+			spriteBranchs[i].spriteBranch.setPosition(600, GetRandomNumber(50,100));
 		}
 			
 	}
@@ -276,18 +276,14 @@ void Game::createBranches()
 void Game::dothis()
 {
 	//spriteBranchs[3].rotate(180); spriteBranchs[3].setPosition(spriteBranchs[3].getPosition().x + 5, spriteBranchs[3].getPosition().y); return;
-	Game::j = GetRandomNumber(0,6);
-	spriteBranchs[Game::j].spriteBranch.rotate(180);
-	return;
+	//Game::j = GetRandomNumber(0,6);
+	//spriteBranchs[Game::j].spriteBranch.rotate(180);
+	//return;
 
 	for (int i = 0; i < NUM_BRANCHES; i++)
 	{
-		//spriteBranchs[i].setTexture(textureBranch);
-		//spriteBranchs[i].setOrigin(sf::Vector2f(220, 40));
-		//spriteBranchs[i].setPosition(1100, (i * 80));
-		//spriteBranchs[3].setRotation(180);
-		Game::j = GetRandomNumber(1, 5);
-		spriteBranchs[Game::j].spriteBranch.rotate(180);
+		if (spriteBranchs[i].spriteBranch.getPosition().y > 500) spriteBranchs[i].spriteBranch.setPosition(spriteBranchs[i].spriteBranch.getPosition().x, spriteBranchs[i].spriteBranch.getPosition().y-400);
+		spriteBranchs[i].spriteBranch.setPosition(spriteBranchs[i].spriteBranch.getPosition().x, spriteBranchs[i].spriteBranch.getPosition().y + 50);
 		
 	}
 }

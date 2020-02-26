@@ -4,5 +4,8 @@
 -Add Message to the Center - DONE
 -Make the bee go left and right and change orinetation accordingly - DONE
 -Add Time bar - DONE
--Add Branches
+-Add Branches - DONE
+-Add Player and make him move
+-Make Player cut the tree and branches go down
+
 
